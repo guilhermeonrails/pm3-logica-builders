@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como ler uma Documentação de API</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .api-bar {
+            background-color: var(--swagger-get-bg);
+            border: 1px solid var(--swagger-get);
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .api-badge {
+            background-color: var(--swagger-get);
+            color: #fff;
+            font-weight: bold;
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+        }
+        .api-path {
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: bold;
+        }
+        .api-desc {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+        .api-content {
+            border: 1px solid var(--gray);
+            padding: 1.5rem;
+            border-top: none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+            background-color: #1a1a24;
+        }
+        .api-btn {
+            background-color: var(--white);
+            color: var(--black);
+            font-weight: bold;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+        .simulate-box {
+            border: 1px dashed var(--purple);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            background: rgba(196, 181, 253, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O Manual de Instruções</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Como ler documentação de API</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Aprenda a identificar apenas o que importa para criar suas próprias automações.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <!-- 1. Introdução -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. O que é a documentação?</h2>
+                <p>Assim como um eletrodoméstico tem um manual, toda API tem uma <strong>documentação</strong>. Ela explica o que a API faz e como você pode usá-la.</p>
+                <p>Se você cria automações (usando ferramentas como Zapier ou Make), você não precisa entender o código complexo da documentação. Você só precisa buscar 4 informações específicas para fazer a sua automação funcionar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Os 4 Elementos Chave -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Os 4 elementos essenciais</h2>
+                <p>Quando abrir qualquer documentação, ignore os textos longos e procure diretamente por estes quatro pilares:</p>
+                <ul>
+                    <li><strong>Método:</strong> É a ação. Os mais comuns são <strong>GET</strong> (para buscar dados) e <strong>POST</strong> (para enviar dados).</li>
+                    <li><strong>Endpoint:</strong> É o "caminho" (URL) que você vai acessar. Exemplo: <code>/produtos</code> ou <code>/pedidos</code>.</li>
+                    <li><strong>Parâmetros:</strong> São as informações extras obrigatórias. Se você quiser listar apenas painéis solares, precisa enviar a categoria (exemplo: parâmetro <code>categoria=paineis</code>).</li>
+                    <li><strong>Exemplo de Resposta:</strong> A demonstração de como os dados vão voltar para você (geralmente no formato JSON).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Simulação Guiada -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Simulação Prática</h2>
+                <p>Abaixo, temos um bloco simulando a documentação real da API do e-commerce <strong>SolarTech</strong>. Clique no bloco azul para expandir e identificar os 4 elementos essenciais.</p>
+                
+                <div class="simulate-box">
+                    
+                    <div class="api-bar" id="sim-bar-get" onclick="toggleSimContent()">
+                        <span class="api-badge">GET</span>
+                        <span class="api-path">/produtos</span>
+                        <span class="api-desc">Busca o catálogo de produtos da SolarTech <strong>(Clique aqui para expandir)</strong></span>
+                    </div>
+
+                    <div id="sim-content" class="api-content" style="display: none;">
+                        <h3 style="color: var(--white); margin-bottom: 1rem; border-top: 1px solid var(--gray); padding-top: 1rem;">Parâmetros Necessários</h3>
+                        <p>Para esta busca (GET) retornar resultados precisos, a API exige uma informação extra:</p>
+                        <p style="margin-left: 1rem; border-left: 2px solid var(--text-gray); padding-left: 1rem; color: var(--text-gray);">
+                            <strong>Nome do parâmetro:</strong> <code>categoria</code> (Obrigatório)<br>
+                            <strong>Descrição:</strong> Digite a categoria do equipamento (ex: paineis, inversores).
+                        </p>
+                        
+                        <h3 style="color: var(--white); margin-top: 2rem;">Testar a API</h3>
+                        <p>Preenchemos o parâmetro com o valor "paineis". Clique no botão para ver a resposta:</p>
+                        
+                        <button class="api-btn" onclick="executeTryItOut()">Executar Teste</button>
+
+                        <div id="sim-response" style="display: none; margin-top: 2rem; background-color: var(--black); padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #00e676;">Exemplo de Resposta (Response)</h3>
+                            <p>A API retornou os dados dos painéis disponíveis no formato JSON:</p>
+                            <div class="code-block" style="font-size: 1rem;">
+{
+  "produto": "Painel Solar 500W Monocristalino",
+  "preco": 1250.00,
+  "estoque": 45,
+  "eficiencia": "21%"
+}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Foco de quem consome -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">4. O Segredo de quem cria automações</h2>
+                <p>Muitas documentações trazem códigos complexos em várias linguagens (Python, Java, etc.) ou regras super técnicas.</p>
+                <p><strong>Ignore tudo isso.</strong> Se você vai consumir a API via automação, você só joga os "4 elementos" dentro do seu sistema de automação (colando o Endpoint, escolhendo o Método, digitando os Parâmetros e tratando o JSON da Resposta) e tudo vai funcionar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Quiz -->
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header" style="text-align: center;">5. Praticando: Quiz</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Responda às 4 perguntas abaixo para fixar os conceitos essenciais.</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-progress" id="quiz-status">Pergunta 1 de 4</div>
+                    <div class="quiz-question" id="quiz-question">Carregando pergunta...</div>
+                    
+                    <div class="quiz-options" id="quiz-options-box"></div>
+                    
+                    <div class="quiz-feedback" id="quiz-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container" style="padding-bottom: 4rem;">
+            <footer>
+                <a href="../aula-10/index.html" class="btn-nav">← Voltar para Aula 10</a>
+                <!-- btn-next se houver aula futura -->
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        // Lógica do Simulador Visível
+        function toggleSimContent() {
+            const content = document.getElementById('sim-content');
+            if(content.style.display === 'none') {
+                content.style.display = 'block';
+                document.getElementById('sim-bar-get').style.borderBottomLeftRadius = '0';
+                document.getElementById('sim-bar-get').style.borderBottomRightRadius = '0';
+            }
+        }
+
+        function executeTryItOut() {
+            document.getElementById('sim-response').style.display = 'block';
+        }
+
+        // Lógica do Quiz
+        const quizData = [
+            {
+                question: "1. O que é o Endpoint de uma API?",
+                options: [
+                    "A. O 'caminho' ou URL específico para acessar uma função.",
+                    "B. A senha geral de segurança do servidor.",
+                    "C. O botão de desligar a ferramenta."
+                ],
+                answer: 0, 
+                explanation: "Correto! O Endpoint é o endereço final que sua automação vai chamar, como por exemplo '/produtos' ou '/carrinho'."
+            },
+            {
+                question: "2. Se a documentação da SolarTech pede um 'Parâmetro' chamado categoria, o que isso significa?",
+                options: [
+                    "A. Que a API só vende uma categoria de produto.",
+                    "B. Que a informação da 'categoria' é um filtro extra necessário para a busca retornar os produtos certos.",
+                    "C. Que o sistema vai quebrar se você comprar."
+                ],
+                answer: 1,
+                explanation: "Exato! Parâmetros são informações extras que o servidor precisa para devolver a resposta correta (neste caso, de qual categoria de produto estamos falando)."
+            },
+            {
+                question: "3. Qual é a principal função do Método GET?",
+                options: [
+                    "A. Deletar informações do banco de dados.",
+                    "B. Apenas buscar ou ler dados da API.",
+                    "C. Enviar informações novas protegidas por senha."
+                ],
+                answer: 1,
+                explanation: "Perfeito! O método GET serve para buscar/extrair, sem modificar nada no sistema original."
+            },
+            {
+                question: "4. O que normalmente encontramos na área de 'Exemplo de Resposta' da documentação?",
+                options: [
+                    "A. Um vídeo explicativo de como programar.",
+                    "B. Um contrato em PDF.",
+                    "C. Um exemplo dos dados que vão retornar, geralmente no formato JSON."
+                ],
+                answer: 2,
+                explanation: "Correto! A resposta (Response) mostra um bloco JSON de exemplo, para você já saber como as informações vão chegar na sua automação."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const uiQuestion = document.getElementById("quiz-question");
+        const uiOptionsBox = document.getElementById("quiz-options-box");
+        const uiFeedback = document.getElementById("quiz-feedback");
+        const uiStatus = document.getElementById("quiz-status");
+
+        function renderQuestion() {
+            if (currentQuestion >= quizData.length) {
+                showConclusion();
+                return;
+            }
+
+            const q = quizData[currentQuestion];
+            uiStatus.innerText = `Pergunta ${currentQuestion + 1} de ${quizData.length}`;
+            uiQuestion.innerText = q.question;
+            
+            uiFeedback.style.display = "none";
+            uiOptionsBox.style.display = "flex";
+            uiOptionsBox.innerHTML = ""; 
+
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement("button");
+                btn.className = "quiz-btn";
+                btn.innerText = opt;
+                btn.style.textAlign = "left";
+                btn.onclick = () => checkAnswer(index);
+                uiOptionsBox.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            const q = quizData[currentQuestion];
+            const isCorrect = (selectedIndex === q.answer);
+            
+            uiOptionsBox.style.display = "none"; 
+            uiFeedback.style.display = "block";
+
+            if (isCorrect) {
+                 score++;
+                 uiFeedback.style.backgroundColor = "rgba(0, 230, 118, 0.15)";
+                 uiFeedback.style.border = "1px solid #00e676";
+                 uiFeedback.innerHTML = `<span style='color:#00e676;'>✅ Correto!</span><br><br><span style='font-size:1.1rem;font-weight:normal;color:#e0e0e0;'>${q.explanation}</span>`;
+            } else {
+                 uiFeedback.style.backgroundColor = "rgba(255, 82, 82, 0.15)";
+                 uiFeedback.style.border = "1px solid #ff5252";
+                 uiFeedback.innerHTML = `<span style='color:#ff5252;'>❌ Incorreto! (A certa era a opção ${String.fromCharCode(65 + q.answer)})</span><br><br><span style='font-size:1.1rem;font-weight:normal;color:#e0e0e0;'>${q.explanation}</span>`;
+            }
+
+            const btnNext = document.createElement("button");
+            btnNext.innerText = "Avançar para a próxima →";
+            btnNext.style.marginTop = "1.5rem";
+            btnNext.style.backgroundColor = "var(--purple)";
+            btnNext.style.border = "none";
+            btnNext.onclick = () => {
+                currentQuestion++;
+                renderQuestion();
+            };
+            uiFeedback.appendChild(btnNext);
+        }
+
+        function showConclusion() {
+            uiStatus.innerText = "Resultado Final";
+            uiQuestion.innerText = `Você acertou ${score} de ${quizData.length} questões!`;
+            uiFeedback.style.display = "none";
+            uiOptionsBox.style.display = "flex";
+            uiOptionsBox.innerHTML = `
+                <div style="text-align:center; margin-top:2rem;">
+                    <p style="font-size:1.2rem; color: #b9b5c1;">Você já está pronto(a) para abrir uma documentação e focar apenas no que vai fazer suas automações ganharem vida!</p>
+                </div>
+            `;
+        }
+
+        // Inicia o quiz
+        renderQuestion();
+    </script>
+</body>
+
+</html>

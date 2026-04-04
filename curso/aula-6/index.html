@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON: Estruturando Dados</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- CodeMirror para Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    <style>
+        .CodeMirror {
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            text-align: left;
+            height: auto;
+            min-height: 14.5rem;
+            /* ~ Espaço fixo de 8 linhas */
+            margin-top: 0.5rem;
+        }
+
+        .code-block {
+            background-color: var(--black);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #00e676;
+            margin: 1rem 0;
+            border: 1px solid var(--gray);
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">Organização de
+                Dados</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">JSON e Dicionários</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Entenda como os sistemas se
+                comunicam de forma universal.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: O que é JSON?</h2>
+                <p>O <strong>JSON</strong> (JavaScript Object Notation) é um formato leve de troca de informações entre
+                    sistemas do mundo inteiro. Apesar de ter "JavaScript" no nome, ele é como se fosse o "inglês" da
+                    programação: <strong>todas as linguagens de programação entendem JSON</strong>.</p>
+                <p>Sabe quando o aplicativo do Spotify pede dados para mostrar as músicas? O que viaja pela internet é
+                    um <a href="https://guilhermeonrails.github.io/api-csharp-songs/songs.json" target="_blank">arquivo
+                        de texto no
+                        formato JSON</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Explicação Conceitual</h2>
+                <p>Ele se organiza num sistema muito lógico chamado de <strong>Chave & Valor (Key & Value)</strong>:</p>
+                <ul>
+                    <li><strong>Chave (Key):</strong> A etiqueta que dá nome à informação (Ex: "Nome", "Idade").</li>
+                    <li><strong>Valor (Value):</strong> A informação real preenchida (Ex: "Guilherme", 28).</li>
+                </ul>
+                <p>Dentro do JSON você pode ter informações em <em>texto</em>, <em>números</em> ou até em
+                    <em>listas</em> (uma prateleira de coisas dentro da ficha de alguém!).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                <img src="/curso/aula-6/json.jpeg" alt="caixa escrita banda favorita" style="width: 100%;">
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">4. Exemplos Práticos (Com Código Python)</h2>
+                <p>No Python, o formato JSON é chamado de <strong>Dicionário (dict)</strong> quando está na memória. A
+                    lógica é exatamente a mesma. Vamos ver como criar um dicionário e, principalmente, <strong>como
+                        extrair apenas a informação que precisamos</strong> usando as Chaves.</p>
+
+                <div class="code-block">cliente = {
+                    <br>"nome": "João Silva",
+                    <br>"cep": "01001-000",
+                    <br>"cidade": "São Paulo"
+                    <br>}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">5. Desafios Práticos</h2>
+                <p>Prepare-se para o simulador abaixo. Aqui estão seus objetivos lógicos:</p>
+                <ol>
+                    <li><strong>Criar um dicionário de produto:</strong> Faça uma variável chamada <code>painel</code>.
+                        Dentro de chaves <code>{}</code>, crie três dados para essa ficha técnica: "modelo", "potencia"
+                        e "preco". Preencha com os dados de um painel da loja SolarTech (ex: 500W).</li>
+                    <li><strong>Acessar o modelo:</strong> Peça para o computador exibir (com o "print") <strong>apenas
+                            o modelo</strong> do painel. Lembre-se de colocar a chave correspondente entre colchetes
+                        (ex: <code>painel["modelo"]</code>).</li>
+                    <li><strong>Bônus para o sistema:</strong> Faça um print exibindo também a "potencia" e o "preco"
+                        logo depois.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">6. Pratique no Código</h2>
+                <form id="python-simulator">
+                    <div class="form-group">
+                        <label for="code-input">Escreva seu código Python com Dicionários/JSON aqui:</label>
+                        <textarea id="code-input" rows="8"></textarea>
+                    </div>
+
+                    <button type="submit">▶ Executar Código</button>
+                </form>
+
+                <div id="resultado" class="simulator-result"
+                    style="background-color: #000; border: 1px solid var(--gray); display: none;">
+                    <h3 style="margin-bottom:1rem;color:var(--text-gray); font-size: 1rem; font-family: monospace;">>
+                        Terminal do Computador</h3>
+                    <div id="output-console"
+                        style="color: #00e676; font-family: monospace; white-space: pre-wrap; font-size: 1.2rem;"></div>
+                </div>
+            </div>
+
+            <footer>
+                <a href="../aula-5/index.html" class="btn-nav">← Voltar para Aula 5</a>
+                <a href="../aula-7/index.html" class="btn-nav">Ir para Aula 7 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

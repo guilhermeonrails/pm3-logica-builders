@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais (if e else)</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- CodeMirror para Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    <style>
+        .CodeMirror {
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            text-align: left;
+            height: auto;
+            min-height: 14.5rem;
+            /* ~ Espaço fixo de 8 linhas */
+            margin-top: 0.5rem;
+        }
+
+        .code-block {
+            background-color: var(--black);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #00e676;
+            margin: 1rem 0;
+            border: 1px solid var(--gray);
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O cérebro do
+                programa
+            </div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Condicionais (if e else)</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como o código toma decisões
+                sozinho baseado no mundo real.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: O que são Condicionais?</h2>
+                <p>Você acorda, olha pela janela e pensa: <em>"<strong>Se</strong> estiver chovendo, eu levo o
+                        guarda-chuva. <strong>Se não</strong>, eu vou de óculos de sol."</em></p>
+                <p>Na programação, os programas operam exatamente da mesma forma. A ferramenta que
+                    permite ao código tomar uma decisão se chama <strong>Estrutura Condicional</strong> ("If e
+                    Else").</p>
+                <p>É o momento em que o "robozinho" age escolhendo caminhos diferentes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Explicação Conceitual (Verdadeiro ou Falso)</h2>
+                <p>Para o computador tomar uma decisão, ele sempre avalia se:<br>
+                    uma afirmação é <strong>Verdadeira (True)</strong> ou <strong>Falsa (False)</strong>?</p>
+                <p>Exemplo: O meio de pagamento:
+                </p>
+                <ul>
+                    <li>A afirmação <em>"O método de pagamento é Pix"</em> é Verdadeira?</li>
+                    <li>Sendo <strong>Verdade (True)</strong> ⇒ Aplica 10% de desconto imediatamente.</li>
+                    <li>Sendo <strong>Falso (False)</strong> ⇒ Segue cobrando o preço normal via Cartão de Crédito.</li>
+                </ul>
+                <p>Basicamente, o sistema formula perguntas cuja resposta só pode ser sim ou não, e atrela uma ação
+                    diferente para cada resposta.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                <img src="/curso/aula-4/pix.png" alt="caixa escrita banda favorita" style="width: 105%;">
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Verificando o estoque</h2>
+                <p>Imagine que você tem um estoque de painéis solares. <br>Antes de vender, você precisa verificar a
+                    quantidade do pedido.
+                </p>
+                <p>Regras:</p>
+                <ul>
+                    <li>Se o estoque for maior que 0, mostre "Compra aprovada!".</li>
+                    <li>Se o estoque for 0, mostre "Sem estoque.".</li>
+                </ul>
+                <div class="dica">
+                    <p>Dica: crie duas variáveis, uma para o estoque e outra para a quantidade desejada.</p>
+                </div>
+                <div class="code-block">estoque = 10<br>quantidade_desejada = 5</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">4. Colocando a mão na massa</h2>
+                <p>É a sua vez de mandar no sistema!</p>
+
+                <form id="python-simulator">
+                    <div class="form-group">
+                        <label for="code-input">Escreva seu código Python com if e else aqui:</label>
+                        <textarea id="code-input" rows="8"></textarea>
+                    </div>
+
+                    <button type="submit">▶ Executar Código</button>
+                </form>
+
+                <div id="resultado" class="simulator-result"
+                    style="background-color: #000; border: 1px solid var(--gray); display: none;">
+                    <h3 style="margin-bottom:1rem;color:var(--text-gray); font-size: 1rem; font-family: monospace;">>
+                        Terminal do Computador</h3>
+                    <div id="output-console"
+                        style="color: #00e676; font-family: monospace; white-space: pre-wrap; font-size: 1.2rem;"></div>
+                </div>
+            </div>
+
+            <footer>
+                <a href="../aula-3/index.html" class="btn-nav">← Voltar para Aula 3</a>
+                <a href="../aula-5/index.html" class="btn-next">Ir para Aula 5 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

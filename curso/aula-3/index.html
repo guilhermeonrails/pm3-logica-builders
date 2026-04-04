@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis na Computação</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Highlight.js for code formatting (optional visual boost) -->
+    <style>
+        .code-block {
+            background-color: var(--black);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #00e676;
+            margin: 1rem 0;
+            border: 1px solid var(--gray);
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O conceito
+                primordial
+            </div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Variáveis na Computação</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como os sistemas armazenam,
+                lembram e usam a informação.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: O que são variáveis?</h2>
+                <p>Na aula passada, vimos que dados (números, textos, booleanos) são processados pelos sistemas. Mas
+                    onde eles ficam guardados enquanto o programa está rodando?</p>
+                <p><strong>A analogia das caixas:</strong></p>
+                <p>Pense numa variável como uma <strong>caixa com uma etiqueta</strong>. Você guarda um valor dentro da
+                    caixa, e escreve um nome nela (a etiqueta) para encontrá-la depois.</p>
+                <ul>
+                    <li><strong>A caixa:</strong> É o espaço na memória do computador.</li>
+                    <li><strong>O valor:</strong> É o dado em si (ex: <code>"João"</code>, <code>1500</code>).</li>
+                    <li><strong>A etiqueta:</strong> É o nome da variável (ex: <code>nome_cliente</code>,
+                        <code>orcamento</code>).
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                <img src="/curso/aula-3/variavel.png" alt="caixa escrita banda favorita" style="width: 80%;">
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Como funciona na prática?</h2>
+
+                <div class="code-block">banda_favorita = "Oasis"</div>
+
+                <p>O sinal de <code>=</code> não significa "igual" (como na matemática). Na programação, ele
+                    significa <strong>RECEBE</strong>. Ou seja, a caixa com etiqueta
+                    <code>banda_favorita</code> acaba de <em>receber</em> o valor "Oasis".
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">Outro exemplo</h2>
+                <p>Quando você acessa o site da SolarTech e vê "Olá, Maria!", o computador não gravou o texto "Maria" na
+                    tela para sempre. <br>Ele fez algo parecido com isso (em código Python):</p>
+
+                <div class="code-block">nome_cliente = "Maria"<br>print("Olá, " + nome_cliente + "!")</div>
+                <p>O <code>print</code> é uma função que serve para exibir informações na tela.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Boas Práticas Básicas</h2>
+                <p>Como na vida real, se você rotular todas as caixas da sua mudança apenas como "Coisas", você não
+                    achará nada depois. O mesmo vale para o código!</p>
+                <ul>
+                    <li><span style="color: #ff1744;">❌ Ruim:</span> <code>x = 100</code> (O que é X?)</li>
+                    <li><span style="color: #00e676;">✅ Bom:</span> <code>preco_kit_solar = 100</code> (Claro e
+                        objetivo)</li>
+                </ul>
+                <p><strong>Regras de Ouro:</strong> Nunca use espaços no nome das variáveis (use_underline). E nomes
+                    devem sempre fazer sentido dentro do seu contexto de negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">4. Chegou a hora de programar</h2>
+
+                <form id="python-simulator">
+                    <div class="form-group">
+                        <label for="code-input">Escreva seu código aqui:</label>
+                        <textarea id="code-input" rows="6" placeholder="nome = 'Maria'&#10;" required
+                            style="font-family: monospace; font-size: 1.2rem; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit">▶ Executar Código</button>
+                </form>
+
+                <div id="resultado" class="simulator-result"
+                    style="background-color: #000; border: 1px solid var(--gray);">
+                    <h3 style="margin-bottom:1rem;color:var(--text-gray); font-size: 1rem; font-family: monospace;">>
+                        Terminal</h3>
+                    <div id="output-console"
+                        style="color: #00e676; font-family: monospace; white-space: pre-wrap; font-size: 1.2rem;"></div>
+                </div>
+            </div>
+
+            <footer>
+                <a href="../aula-2/index.html" class="btn-nav">← Voltar para Aula 2</a>
+                <a href="../aula-4/index.html" class="btn-next">Ir para Aula 4 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

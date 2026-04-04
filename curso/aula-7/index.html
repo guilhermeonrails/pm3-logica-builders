@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organização de Código</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .code-block {
+            background-color: var(--black, #1e1e1e);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 1rem 0;
+            border: 1px solid var(--gray, #333);
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple, #bb86fc); margin-bottom: 1rem;">
+                Arquitetura e Boas Práticas</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Organização de Código</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como transformar a bagunça inicial
+                em um sistema profissional e escalável.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. O "Código Macarrônico"</h2>
+                <p>Quando pedimos para uma Inteligência Artificial criar um site rápido, é muito comum ela devolver tudo
+                    misturado em um único arquivo de texto gigante.</p>
+                <div class="code-block" style="color: #ff7597;">📁 index.html (O Arquivo "Tudo em Um")
+                    ├── &lt;html&gt; Estrutura Principal da Tela
+                    ├── &lt;style&gt; Cores e Design
+                    └── &lt;script&gt; Lógica de cliques e cálculos</div>
+                <p>Isso funciona para testes, mas no mundo profissional o chamamos de <strong>Código
+                        Macarrônico</strong> (tudo enrolado!). O problema é que, se você tiver que corrigir um pequeno
+                    erro visual num site com 10 páginas, terá que abrir 10 arquivos gigantes diferentes para alterar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. A Regra de Ouro: Responsabilidade Única</h2>
+                <p>A primeira grande evolução na sua jornada é entender que cada parte do seu sistema deve ter uma
+                    <strong>única responsabilidade</strong>.</p>
+                <p>Ao invés de um arquivão misturado, nós o dividimos em três tecnologias especializadas:</p>
+
+                <div class="code-block" style="color: #82aaff;">📁 Meu Projeto
+                    ├── 📄 index.html ➔ O Esqueleto (Textos, Imagens e Campos)
+                    ├── 🎨 styles.css ➔ A Pintura (Cores, Espaçamentos e Layout)
+                    └── ⚙️ script.js ➔ O Motor (O que acontece ao apertar um botão?)</div>
+
+                <p><strong>Vantagem:</strong> Se amanhã a marca da empresa mudar de Azul para Verde, você muda a cor
+                    apenas UMA vez dentro do arquivo <code>styles.css</code>, e todas as páginas do site vão se
+                    atualizar sozinhas! Isso é criar elementos "reutilizáveis".</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container" style="padding-bottom: 4rem;">
+            <footer>
+                <a href="../aula-6/index.html" class="btn-nav">← Voltar para Aula 6</a>
+                <a href="../aula-8/index.html" class="btn-nav" style="visibility: hidden;">Ir para Aula 8 →</a>
+            </footer>
+        </div>
+    </section>
+
+</body>
+
+</html>

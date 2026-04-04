@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Início</title>
+  <style>
+    :root {
+      --black: #050505;
+      --gray: #2d2a33;
+      --text-gray: #b9b5c1;
+      --white: #ffffff;
+      --purple: #c4b5fd;
+      --purple-dark: #452e78;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--black);
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      background-color: var(--purple-dark);
+      color: var(--white);
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--purple);
+      color: var(--black);
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="iniciarCurso()">Iniciar curso</button>
+
+  <script>
+    function iniciarCurso() {
+      window.location.href = "curso/aula-1/index.html";
+    }
+  </script>
+
+</body>
+</html>

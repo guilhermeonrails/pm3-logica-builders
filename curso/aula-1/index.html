@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - Fundamentos: Pensar em Fluxo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O pensamento
+            </div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Aula 1: Processamento e camadas </h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Transformando demanda em
+                processo.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: O que é um sistema?</h2>
+                <p>Um sistema é basicamente uma sequência de passos lógicos.</p>
+                <p>A estrutura de qualquer sistema se resume a três etapas simples:</p>
+                <div
+                    style="display: flex; gap: 1rem; align-items: center; justify-content: center; margin: 2rem 0; font-weight: bold; font-size: 1.4rem;">
+                    <div
+                        style="border: 2px solid var(--purple); padding: 1rem; border-radius: 8px; text-align: center;">
+                        ENTRADA<br><em style="font-size: 1rem; font-weight: normal; color: var(--text-gray);">Dado</em>
+                    </div>
+                    <div>→</div>
+                    <div
+                        style="border: 2px solid var(--purple); padding: 1rem; border-radius: 8px; text-align: center;">
+                        Processamento<br><em
+                            style="font-size: 1rem; font-weight: normal; color: var(--text-gray);">Regra</em>
+                    </div>
+                    <div>→</div>
+                    <div
+                        style="border: 2px solid var(--purple); padding: 1rem; border-radius: 8px; text-align: center;">
+                        SAÍDA<br><em
+                            style="font-size: 1rem; font-weight: normal; color: var(--text-gray);">Resultado</em></div>
+                </div>
+                <p>
+                    Todo sistema precisa de quatro coisas:
+                    <strong>um gatilho</strong> para iniciar,
+                    <strong>regras</strong> para decidir,
+                    <strong>uma saída</strong> como resultado
+                    e <strong>um responsável</strong> pelo processo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Por que isso importa?</h2>
+                <p>
+                    Entender como um sistema funciona é essencial porque praticamente tudo ao seu redor segue essa
+                    lógica —
+                    desde um site até um negócio inteiro.
+                </p>
+                <p>
+                    Quando você domina isso, deixa de apenas usar ferramentas e passa a criar soluções.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Primeiros passos</h2>
+                <p>Como começar do zero e desenhar seu primeiro fluxo:</p>
+                <ol>
+                    <li><strong>Mapeie a Entrada e os dados</strong></li>
+                    <li><strong>Defina o caminho de sucesso</strong></li>
+                    <li><strong>Estabeleça a Saída</strong></li>
+                    <li><strong>Nomeie um Dono</strong></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">5. Aplicação prática</h2>
+                <p>Teste o nosso "robozinho" de triagem da SolarTech. Preencha a simulação do cliente e veja como a
+                    lógica funciona nos bastidores.</p>
+
+                <form id="intake-form">
+                    <div class="form-group">
+                        <label for="titulo">Nome do Cliente / Empresa</label>
+                        <input type="text" id="titulo" placeholder="Ex: João Ferreira ou SolarTech Indústria" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo">Qual a média da conta de energia mensal?</label>
+                        <select id="tipo" required>
+                            <option value="" disabled selected>Escolha a opção...</option>
+                            <option value="residencial-baixo">Até R$ 400 (Residencial Baixo)</option>
+                            <option value="residencial-alto">De R$ 401 a R$ 1500 (Residencial Alto)</option>
+                            <option value="corporativo">Acima de R$ 1500 (Comercial / Indústria)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Enviar Orçamento (Disparar Automação)</button>
+                </form>
+
+                <div id="resultado" class="simulator-result">
+                    <h3 style="margin-bottom:1rem;color:var(--white);">Log de Execução</h3>
+                    <div class="flow-step">
+                        <span class="badge">ENTRADA</span>
+                        <span id="log-trigger">Novo pedido de orçamento recebido no site.</span>
+                    </div>
+                    <div class="flow-step">
+                        <span class="badge">DECISÃO</span>
+                        <span id="log-router">Avaliando regras de consumo...</span>
+                    </div>
+                    <div class="flow-step">
+                        <span class="badge">SAÍDA</span>
+                        <span id="log-action">Finalizando...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">Desafio Prático Final</h2>
+                <p>Inspirado na sua própria rotina comercial de longo prazo, desenhe no papel ou no bloco de notas
+                    <strong>2 fluxos</strong> de uma ideia.
+                </p>
+                <p><strong>Critérios:</strong></p>
+                <ul>
+                    <li>Defina claramente quem é o "Dono do Fluxo".</li>
+                    <li>Defina 1 métrica de sucesso.</li>
+                    <li>Faça o <em>Checklist final</em>: Você consegue apontar a regra clara? Consegue dizer "o que
+                        muda" quando rodar? Se sim, você avançou!</li>
+                </ul>
+            </div>
+
+            <footer>
+                <a href="../aula-2/index.html" class="btn-next">Ir para Aula 2: Dados na Prática →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

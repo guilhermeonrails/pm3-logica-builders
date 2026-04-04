@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados na Prática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">Tipos de dados
+            </div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Dados na Prática</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Campos, formatos, regras e
+                desastres.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: Lidando com a Sujeira</h2>
+                <p>Um fluxo perfeito no papel pode quebrar no primeiro dia. O motivo? <strong>Dados ruins.</strong></p>
+                <ul>
+                    <li><strong>Campos obrigatórios:</strong> Sem essa informação, o fluxo nem deve começar.</li>
+                    <li><strong>Padronização:</strong> Garantir que um e-mail tenha formato de e-mail e que um CEP
+                        esteja completo para o cálculo de frete do kit solar.</li>
+                    <li><strong>Regras (Se → Então):</strong> A espinha dorsal das decisões lógicas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Por que isso importa?</h2>
+                <p>Na era da IA, os dados são o combustível que alimenta os modelos de aprendizado de máquina. Quanto
+                    mais limpos e organizados forem os dados, mais precisos e confiáveis serão os resultados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Os principais tipos de dados</h2>
+                <!-- int, str, float, boolean, date, list, dict -->
+                <p><strong>Inteiro (int):</strong> Números inteiros, sem casas decimais. Ex: 10, 25, 1000.</p>
+                <p><strong>String (str):</strong> Texto. Ex: "João", "Rua das Flores", "12345-678".</p>
+                <p><strong>Float (float):</strong> Números com casas decimais. Ex: 10.5, 25.75, 1000.00.</p>
+                <p><strong>Boolean (bool):</strong> Verdadeiro ou falso. Ex: true, false.</p>
+                <p><strong>Date (date):</strong> Data. Ex: 2022-12-31.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">4. Caso Real</h2>
+                <p>
+                    Antes de construir qualquer sistema, você precisa garantir que os dados estão padronizados e fazem
+                    sentido entre si.
+                    Um erro simples nisso já causou prejuízos enormes:
+                </p>
+                <ol>
+                    <li>
+                        No caso da missão <a href="https://science.nasa.gov/mission/mars-climate-orbiter/"
+                            target="_blank">Mars Climate
+                            Orbiter</a> (NASA), dois sistemas usavam unidades diferentes:
+                        um trabalhava com <strong>libras</strong> e outro com <strong>newtons</strong>.
+                    </li>
+                    <li>
+                        Não havia validação ou padronização.
+                    </li>
+                    <li>
+                        Resultado: a nave entrou na atmosfera de Marte na trajetória incorreta e foi destruída.
+                    </li>
+                </ol>
+                <p>
+                    👉 A lição: Prejuízo foi de ~US$ 125 milhões.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">5. Aplicação prática</h2>
+                <p>Neste simulador, digite qualquer valor abaixo e nosso sistema tentará adivinhar qual é o <strong>tipo
+                        do dado</strong>.</p>
+
+                <form id="type-tester-form">
+                    <div class="form-group">
+                        <label for="dado-input">Digite um valor para o teste:</label>
+                        <input type="text" id="dado-input" placeholder="Ex: 100, true, SolarTech, 15.50..." required>
+                    </div>
+
+                    <button type="submit">Analisar Tipo de Dado</button>
+                </form>
+
+                <div id="resultado" class="simulator-result">
+                    <h3 style="margin-bottom:1rem;color:var(--white);">Resultado da Análise</h3>
+                    <div class="flow-step">
+                        <span class="badge">VALOR DIGITADO</span>
+                        <span id="log-valor">--</span>
+                    </div>
+                    <div class="flow-step">
+                        <span class="badge" style="background-color: var(--purple-dark);">TIPO INFERIDO</span>
+                        <span id="log-tipo" style="font-weight: bold; font-size: 1.2rem;">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">5. Quiz: Fixação de Tipos de Dados</h2>
+                <p>O computador é literal. Baseado no que você vê, identifique como a máquina irá ler o dado.</p>
+
+                <div id="quiz-container" style="text-align: center; margin-top: 2rem;">
+                    <div style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-gray);">Pergunta <span
+                            id="quiz-counter">1</span> de 10</div>
+
+                    <div id="quiz-value"
+                        style="font-size: 3rem; font-weight: bold; color: var(--white); padding: 2rem; background: var(--gray); border-radius: 8px; margin-bottom: 2rem;">
+                        <!-- Valor aqui -->
+                    </div>
+
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <button type="button" class="quiz-btn" data-type="str"
+                            style="width: auto; padding: 0.6rem 1rem; font-size: 0.9rem;">String (str)</button>
+                        <button type="button" class="quiz-btn" data-type="int"
+                            style="width: auto; padding: 0.6rem 1rem; font-size: 0.9rem;">Inteiro (int)</button>
+                        <button type="button" class="quiz-btn" data-type="float"
+                            style="width: auto; padding: 0.6rem 1rem; font-size: 0.9rem;">Decimal (float)</button>
+                        <button type="button" class="quiz-btn" data-type="bool"
+                            style="width: auto; padding: 0.6rem 1rem; font-size: 0.9rem;">Booleano (bool)</button>
+                        <button type="button" class="quiz-btn" data-type="date"
+                            style="width: auto; padding: 0.6rem 1rem; font-size: 0.9rem;">Data (date)</button>
+                    </div>
+
+                    <div id="quiz-feedback"
+                        style="margin-top: 1.5rem; font-size: 1.2rem; text-align: left; min-height: 3rem; padding: 1rem; border-radius: 8px; display: none;">
+                    </div>
+                </div>
+
+                <div id="quiz-end" style="display: none; text-align: center; margin-top: 2rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 style="color: var(--white);">Desafio Concluído!</h3>
+                    <p style="font-size: 1.5rem; margin-bottom: 2rem;">Você acertou <strong id="quiz-score">--</strong>
+                        de 10 perguntas.</p>
+                    <button type="button" id="btn-restart-quiz">Tentar Novamente</button>
+                </div>
+            </div>
+
+            <footer>
+                <a href="../aula-1/index.html" class="btn-nav">← Voltar para Aula 1</a>
+                <a href="../aula-3/index.html" class="btn-next">Ir para Aula 3: Variáveis →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

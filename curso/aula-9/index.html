@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O ciclo da internet: Request e Response</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O Pulso da
+                Internet</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Request & Response</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como a internet funciona?</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. O Carteiro da Internet</h2>
+                <p>Essa comunicação sempre segue uma regra rigorosa de duas vias, como os correios:</p>
+                <ul>
+                    <li><strong>1. Request (Requisição):</strong> É a carta que sai de você. Tem endereço, selo e sua
+                        pergunta ou dados. O Frontend <em>sempre</em> dá o primeiro passo.</li>
+                    <li><strong>2. Response (Resposta):</strong> É o pacote que volta do Servidor. Trazendo a página de
+                        volta, dados no formato JSON ou, em certos casos, uma mensagem de erro indicando que a página
+                        não existe.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. A Anatomia do Request (O que você envia)</h2>
+                <p>O Backend não é vidente, por isso, ao acessar um site ou aplicativo, o seu celular despacha o Request
+                    contendo duas coisas muito importantes:</p>
+
+                <div class="code-block" style="color: #64b5f6;">Ação Básica (Método): GET
+                    Endereço de Destino: www.site.com/produtos</div>
+
+                <ul>
+                    <li>O Método <strong>GET</strong> (Pegar) significa: "Por favor, me envie a lista de produtos".</li>
+                    <li>O Método <strong>POST</strong> (Publicar/Enviar) é usado quando você está mandando informação
+                        nova. Exemplo: um formulário de cadastro sendo enviado. O Método POST leva dados de pagamento
+                        "escondidos" dentro do pacote.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. O Response Status (A resposta do Servidor)</h2>
+                <p>Quando o pacote de resposta volta, ele vem carimbado com um código numérico para o computador
+                    entender logo de cara se tudo deu certo ou se a coisa ficou feia.</p>
+                <ul>
+                    <li>🟢 <strong>200 OK:</strong> "Tudo certo! Aqui está o que você pediu".</li>
+                    <li>🟡 <strong>404 Not Found:</strong> "Não encontrei essa página ou esse produto! Tem certeza do
+                        endereço?" (Erro histórico e super famoso da web).</li>
+                    <li>🔴 <strong>500 Server Error:</strong> "A culpa é nossa (do Backend). Deu pau no nosso código ou
+                        o Banco de Dados parou de funcionar e a conta de luz atrasou."</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header" style="text-align: center;">4. Simulador da Via Expressa</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Aperte o botão para criar a requisição via Frontend
+                    e repare na velocidade que a resposta volta do Backend!</p>
+
+                <div class="btn-action-group" style="justify-content: center;">
+                    <button onclick="simulateRequest('GET_WEATHER')"
+                        style="max-width: 250px; background-color: #2e7d32;">🌤️ Pedir Clima</button>
+                    <button onclick="simulateRequest('GET_404')" style="max-width: 250px; background-color: #f57c00;">🤨
+                        Buscar Fantasma</button>
+                    <button onclick="simulateRequest('POST_ERROR')"
+                        style="max-width: 250px; background-color: #c62828;">💥 Cadastrar Errado</button>
+                </div>
+
+                <div class="req-res-simulator">
+                    <div class="terminal-box">
+                        <div class="terminal-header">💻 Seu Navegador (Request Frontend)</div>
+                        <div class="terminal-content" id="cliente-console" style="color: #64b5f6;">
+                            Aguardando ação...
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; width: 50px;">
+                        <span style="font-size: 2rem; color: var(--text-gray);">⇆</span>
+                    </div>
+
+                    <div class="terminal-box">
+                        <div class="terminal-header">☁️ O Servidor (Response Backend)</div>
+                        <div class="terminal-content" id="server-console" style="color: #00e676;">
+                            Dormindo...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container" style="padding-bottom: 4rem;">
+            <footer>
+                <a href="../aula-8/index.html" class="btn-nav">← Voltar para Aula 8</a>
+                <a href="../aula-10/index.html" class="btn-nav" style="visibility: visible;" id="btn-next-class">Ir para
+                    Aula 10 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        const clienteConsole = document.getElementById("cliente-console");
+        const serverConsole = document.getElementById("server-console");
+
+        function simulateRequest(type) {
+            // Limpa servidor e inicia Loading
+            serverConsole.innerText = "Processando informações pela rede...";
+            serverConsole.style.color = "var(--text-gray)";
+
+            let reqText = "";
+            let resText = "";
+            let resColor = "#00e676";
+
+            if (type === "GET_WEATHER") {
+                reqText = "Método: GET\nURL: https://api.previsao.com/hoje\n\n[Enviando via Internet... 🚀]";
+                resText = "Status: 200 OK\nFormato: JSON\n\n{\n  \"cidade\": \"São Paulo\",\n  \"temperatura\": 28,\n  \"ceu\": \"Ensolarado\"\n}";
+                resColor = "#00e676"; // Green
+            }
+            else if (type === "GET_404") {
+                reqText = "Método: GET\nURL: https://api.loja.com/produto/fantasma-99\n\n[Procurando no banco de dados... 🔎]";
+                resText = "Status: 404 NOT FOUND\nErro: Produto não existe.\n\n{\n  \"mensagem\": \"Produto 99 não foi localizado nos registros\"\n}";
+                resColor = "#ffd54f"; // Yellow
+            }
+            else if (type === "POST_ERROR") {
+                reqText = "Método: POST\nURL: https://api.sistema.com/cadastro\nCorpo da Requisição: \n  - Nome: Vazio\n\n[Enviando tentativa grosseira... 💣]";
+                resText = "Status: 500 INTERNAL SERVER ERROR\nO sistema tentou salvar nome vazio e quebrou o servidor!\n\n!! FATAL EXCEPTION: NULL_POINTER !!";
+                resColor = "#ff5252"; // Red
+            }
+
+            // Mostra o request imediato
+            clienteConsole.innerText = reqText;
+
+            // Simula delay de rede (Loading Time) de 1500ms
+            setTimeout(() => {
+                serverConsole.innerText = resText;
+                serverConsole.style.color = resColor;
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>

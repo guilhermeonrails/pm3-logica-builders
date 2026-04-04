@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas em Python</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- CodeMirror para Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    <style>
+        .CodeMirror {
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            text-align: left;
+            height: auto;
+            min-height: 14.5rem;
+            /* ~ Espaço fixo de 8 linhas */
+            margin-top: 0.5rem;
+        }
+
+        .code-block {
+            background-color: var(--black);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #00e676;
+            margin: 1rem 0;
+            border: 1px solid var(--gray);
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">Coleções de
+                dados
+            </div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Listas em Python</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Expandindo sua capacidade de
+                guardar informações em série.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: O que são Listas?</h2>
+                <p>Aprendemos que uma variável é como uma <strong>caixa</strong> onde guardamos um único
+                    valor por vez. Mas imagine ter 500 clientes no seu sistema e precisar criar 500 caixas diferentes
+                    (<code>cliente1</code>, <code>cliente2</code>, <code>cliente3</code>...). Seria um pesadelo, não é?
+                </p>
+                <p>É aqui que entram as <strong>Listas</strong>. Elas são estruturas criadas para guardar vários valores
+                    diferentes dentro de <strong>um único lugar</strong>. Se a variável normal é uma caixa para um
+                    sapato, a Lista é como um armário inteiro cheio de prateleiras!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Explicação Conceitual (As Prateleiras)</h2>
+                <br>
+
+                <ul>
+                    <li>Na programação, a lista usa um conceito chamado <strong>Índice</strong>.</li>
+                    <li>O Índice nada mais é do que a <em>posição</em> de um item dentro da lista.</li>
+                    <li><strong>Importante:</strong> Para o computador, a lista nunca começa na posição 1. Ele
+                        sempre começa a contar do <strong>Zero (0)</strong>.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Exemplo Conceitual (Com Código)</h2>
+                <p>Dê uma olhada em como transformar suas "prateleiras" do mundo real em código:</p>
+
+                <div class="code-block">clientes = ["Maria", "João", "Ana"]<br>print(clientes[0])</div>
+
+                <p><strong>Por trás dos bastidores:</strong></p>
+                <ul>
+                    <li><code>[...]</code>: Os colchetes indicam para o computador que ali nasce uma Lista.</li>
+                    <li><code>clientes[0]</code>: Puxa exatamente o item guardado na posição Zero (neste caso, "Maria").
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">4. Inserindo Itens em uma Lista</h2>
+                <p>Agora que você já sabe o que é uma lista e como acessar seus itens, vamos aprender a adicionar novos
+                    itens a ela. Para isso, usamos o método <code>.append()</code>.</p>
+
+                <div class="code-block">clientes=["Maria","João","Ana"<br>clientes.append("Pedro")</div>
+
+                <p><strong>Por trás dos bastidores:</strong></p>
+                <ul>
+                    <li>A saída será: Maria, João, Ana, Pedro.</li>
+                    <li><code>append(...)</code>: Uma ação pronta (método) que pega o que você digitou e "adiciona" no
+                        finalzinho da lista.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">5. Removendo Itens de uma Lista</h2>
+                <p>Agora que você já sabe o que é uma lista e como acessar seus itens, vamos aprender a remover itens
+                    dela. Para isso, usamos o método <code>.remove()</code>.</p>
+
+                <div class="code-block">clientes=["Maria","João","Ana","Pedro"]<br>clientes.remove("Ana")</div>
+
+                <p><strong>Por trás dos bastidores:</strong></p>
+                <ul>
+                    <li>A saída será: Maria, João, Pedro.</li>
+                    <li><code>remove(...)</code>: Uma ação pronta (método) que pega o que você digitou e "remove" da
+                        lista.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">6. Outros métodos</h2>
+                <p>Além do <code>.append()</code> e do <code>.remove()</code>, existem outros métodos que podem ser
+                    usados em listas:</p>
+                <ul>
+                    <li><code>.insert(index, item)</code>: Insere um item em uma posição específica da lista.</li>
+                    <li><code>.pop()</code>: Remove o último item da lista.</li>
+                    <li><code>.len()</code>: Retorna o número de itens na lista.</li>
+                    <li><code>.clear()</code>: Remove todos os itens da lista.</li>
+                    <li><code>.index(item)</code>: Retorna o índice de um item específico da lista.</li>
+                    <li><code>.count(item)</code>: Retorna o número de vezes que um item aparece na lista.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">7. Desafios Práticos</h2>
+                <p>Nesta etapa, nós não daremos código pronto, mas sim o desafio lógico. Memorize seus objetivos antes
+                    de ir para o simulador:</p>
+                <ol>
+                    <li><strong>Criar uma lista:</strong> Faça uma variável chamada <code>carrinho</code> contendo dois
+                        ou três itens. Lembre-se, use aspas em texto e separe os itens com vírgulas.</li>
+                    <li><strong>Acessar por índice:</strong> Peça para o computador exibir (com o "print") o primeiro
+                        item que você escolheu.</li>
+                    <li><strong>Adicione e remova itens:</strong> Use `.append('item')` e `.remove('item')` no
+                        <code>carrinho</code> para fazê-lo crescer e diminuir.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">8. Pratique no Código</h2>
+                <form id="python-simulator">
+                    <div class="form-group">
+                        <label for="code-input">Escreva seu código Python com Listas aqui:</label>
+                        <textarea id="code-input" rows="8"></textarea>
+                    </div>
+
+                    <button type="submit">▶ Executar Código</button>
+                </form>
+
+                <div id="resultado" class="simulator-result"
+                    style="background-color: #000; border: 1px solid var(--gray); display: none;">
+                    <h3 style="margin-bottom:1rem;color:var(--text-gray); font-size: 1rem; font-family: monospace;">>
+                        Terminal do Computador</h3>
+                    <div id="output-console"
+                        style="color: #00e676; font-family: monospace; white-space: pre-wrap; font-size: 1.2rem;"></div>
+                </div>
+            </div>
+
+            <footer>
+                <a href="../aula-4/index.html" class="btn-nav">← Voltar para Aula 4</a>
+                <a href="../aula-6/index.html" class="btn-nav">Ir para Aula 6 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

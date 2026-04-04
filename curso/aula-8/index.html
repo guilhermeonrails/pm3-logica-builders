@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é Frontend e Backend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O Ecossistema
+                da Web</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Frontend & Backend</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como a tecnologia é dividida nos
+                bastidores e na tela do seu computador.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                <img src="/curso/aula-8/f-b.png" alt="frontend e backend" style="width: 65%;">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. A Grande Divisão: Por que existe?</h2>
+                <p>Imagine um grande restaurante. O <strong>Frontend</strong> seria o salão principal: as mesas bonitas,
+                    o cardápio iluminado, a música ambiente. É tudo aquilo com que o cliente (você) interage
+                    diretamente.</p>
+                <p>O <strong>Backend</strong> seria a cozinha: o fogão industrial, o estoque congelado e o chef. É onde
+                    o trabalho pesado acontece, longe dos olhos dos clientes, garantindo que o prato chegue perfeito.
+                </p>
+                <h3>Responsabilidades:</h3>
+                <ul>
+                    <li><strong>Frontend:</strong> Cuidar da estética, da interatividade visual (cliques, animações),
+                        acessibilidade e de coletar os dados do usuário.</li>
+                    <li><strong>Backend:</strong> Cuidar das regras de negócio, segurança (criptografia de senhas),
+                        acesso ao Banco de Dados e envio das informações processadas de volta ao Frontend (geralmente
+                        via
+                        JSON!).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Principais Linguagens do Mercado</h2>
+                <p>Cada lado dessa moeda desenvolveu ferramentas e linguagens perfeitas para suas necessidades:</p>
+
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div class="code-block" style="flex: 1; min-width: 300px;">
+                        <h3 style="color: #64b5f6; margin-top: 0;">Linguagens de Frontend</h3>
+                        <p>Focadas em rodar diretamente no navegador do usuário (Chrome, Safari, etc):</p>
+                        <ul>
+                            <li><strong>HTML & CSS:</strong> A fundação (estrutura e visual).</li>
+                            <li><strong>JavaScript:</strong> O rei do Frontend. Dá vida à tela.</li>
+                            <li><em>Frameworks:</em> React (Facebook), Vue.js, Angular (Google).</li>
+                        </ul>
+                    </div>
+                    <div class="code-block" style="flex: 1; min-width: 300px;">
+                        <h3 style="color: #ff7597; margin-top: 0;">Linguagens de Backend</h3>
+                        <p>Focadas em servidores robustos e processamento massivo:</p>
+                        <ul>
+                            <li><strong>Python:</strong> Muito usado (Django) e em I.A.</li>
+                            <li><strong>Java & C#:</strong> Gigantes corporativos (Bancos, Sistemas Antigos).</li>
+                            <li><strong>Node.js:</strong> Usa JavaScript no Backend!</li>
+                            <li><strong>PHP:</strong> Domina boa parte da web e WordPress.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. Como escolher o que aprender?</h2>
+                <p>Muitos iniciantes travam tentando escolher "a melhor linguagem". A verdade é que <strong>não existe
+                        bala de prata</strong>. Escolha baseada no seu objetivo:</p>
+                <ol>
+                    <li><strong>Se ama visual e design:</strong> Vá para o Frontend (React, HTML, CSS). Você verá o
+                        resultado do seu código imediatamente na tela.</li>
+                    <li><strong>Se ama lógica, dados e "como as coisas funcionam" por debaixo do capô:</strong> Vá para
+                        o Backend (Python, Node, Java).</li>
+                    <li><strong>Curva de Aprendizado:</strong> Python e JavaScript são as mais recomendadas para quem
+                        está fazendo seus primeiros programas, pois são muito "humanas" de ler.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header" style="text-align: center;">4. Quiz de Fixação: Frontend ou Backend?</h2>
+                <p style="text-align: center;">Clique na resposta certa de acordo com a responsabilidade citada.</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-progress" id="q-progress">Pergunta 1 de 10</div>
+                    <div class="quiz-question" id="q-text">1. Onde as cores e os botões da tela são programados?</div>
+
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="checkAnswer('FRONTEND')">FRONTEND</button>
+                        <button class="quiz-btn" onclick="checkAnswer('BACKEND')">BACKEND</button>
+                    </div>
+
+                    <div class="quiz-feedback" id="q-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container" style="padding-bottom: 4rem;">
+            <footer>
+                <a href="../aula-7/index.html" class="btn-nav">← Voltar para Aula 7</a>
+                <!-- Oculto até término do quiz? Opcional. -->
+                <a href="../aula-9/index.html" class="btn-nav" style="visibility: visible;" id="btn-next-class">Ir para
+                    Aula 9 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        const questions = [
+            { text: "1. Onde as cores, tamanho das fontes e margens do site são decididas?", answer: "FRONTEND" },
+            { text: "2. Onde é feita a verificação se o usuário tem saldo no banco antes da compra?", answer: "BACKEND" },
+            { text: "3. O código que exibe a animação de 'Carregando...' quando clicamos em um botão.", answer: "FRONTEND" },
+            { text: "4. A estrutura que se conecta com o Banco de Dados para buscar o catálogo de produtos inteiro.", answer: "BACKEND" },
+            { text: "5. A tela que você está vendo e clicando neste exato momento.", answer: "FRONTEND" },
+            { text: "6. Linguagens como Python, Java e C# brilham mais tradicionalmente em qual lado?", answer: "BACKEND" },
+            { text: "7. Tecnologias como HTML, CSS e React atuam em que área?", answer: "FRONTEND" },
+            { text: "8. A segurança primária de um aplicativo de banco que criptografa os cartões de crédito vive no...", answer: "BACKEND" },
+            { text: "9. Se quisermos criar um modo escuro (Dark Mode) para nossa aplicação, o código responsável será do...", answer: "FRONTEND" },
+            { text: "10. Se a receita da Netflix de 'sugestões baseadas no que você assistiu' fosse processada pelo computador, onde ela rodaria?", answer: "BACKEND" },
+        ];
+
+        let currentQuestion = 0;
+        let correctCount = 0;
+
+        const elText = document.getElementById("q-text");
+        const elProgress = document.getElementById("q-progress");
+        const elFeedback = document.getElementById("q-feedback");
+        const optionsDiv = document.querySelector(".quiz-options");
+
+        function loadQuestion() {
+            if (currentQuestion < questions.length) {
+                elText.innerText = questions[currentQuestion].text;
+                elProgress.innerText = `Pergunta ${currentQuestion + 1} de ${questions.length}`;
+                elFeedback.innerText = "";
+            } else {
+                elText.innerText = "🎉 Quiz concluído!";
+                optionsDiv.style.display = "none";
+                elProgress.innerText = "Resultado Final";
+                elFeedback.innerHTML = `<span style="color: #00e676;">Você acertou ${correctCount} de ${questions.length} perguntas! Excelente!</span>`;
+            }
+        }
+
+        function checkAnswer(chosen) {
+            const context = questions[currentQuestion];
+            if (chosen === context.answer) {
+                correctCount++;
+                elFeedback.innerHTML = "<span style='color: #00e676;'>✅ Resposta Correta!</span>";
+            } else {
+                elFeedback.innerHTML = `<span style='color: #ff5252;'>❌ Incorreto! A resposta era ${context.answer}.</span>`;
+            }
+
+            optionsDiv.style.display = "none"; // Hide temporarily
+
+            setTimeout(() => {
+                currentQuestion++;
+                optionsDiv.style.display = "flex";
+                loadQuestion();
+            }, 2000);
+        }
+
+        // Initialize
+        loadQuestion();
+    </script>
+</body>
+
+</html>

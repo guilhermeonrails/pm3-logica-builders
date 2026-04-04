@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Poderes da API: GET, POST, PUT e DELETE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple); margin-bottom: 1rem;">O Idioma dos Sistemas</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Métodos de API</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como a internet entende o que queremos fazer quando clicamos em um botão.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <!-- 1. Introdução -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. O que é uma API?</h2>
+                <p>Imagine que você fala português e o computador do banco fala japonês. Se vocês tentarem conversar diretamente, não vai dar certo. A <strong>API</strong> (Interface de Programação de Aplicações) é como um tradutor oficial que fica entre os dois.</p>
+                <p>De forma muito simples, APIs são pontes de comunicação entre sistemas. Quando você clica "Pagar com PIX" no iFood, o iFood não o seu banco. Em vez disso, o iFood usa uma API para mandar uma mensagem segura para o seu banco perguntando: <em>"Ei, você pode aprovar esse pagamento?"</em>.</p>
+                <p>Isso acontece o tempo todo no seu dia a dia: ao fazer login com o Google em outro site, ver a previsão do tempo no celular ou buscar passagens aéreas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Explicação conceitual -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. Como os pedidos são feitos? (Ações)</h2>
+                <p>Vimos na aula passada que tudo na internet funciona através de requisições (Requests). Mas como a API do servidor sabe o que você quer fazer?</p>
+                <p>Para manter as coisas organizadas, as APIs funcionam baseadas em "intenções". Sempre que fazemos um pedido, nós avisamos qual é a nossa intenção escolhendo um dos quatro grandes métodos: <strong>GET, POST, PUT ou DELETE</strong>. Pense neles como verbos em uma frase de ação.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Seção: GET -->
+    <section class="step">
+        <div class="container">
+            <div class="card" style="border-left: 8px solid #64b5f6;">
+                <h2 class="card-header" style="color: #64b5f6;">3. O Método GET (Buscar)</h2>
+                <p>O <strong>GET</strong> (do inglês "Pegar") é o método visualizador. Ele indica que você quer apenas <strong>BUSCAR</strong> ou <strong>LER</strong> informações, sem alterar absolutamente nada no servidor.</p>
+                <p>🍕 <strong>A Analogia do Restaurante:</strong> É o equivalente a você sentar na mesa e pedir o <strong>cardápio</strong> ao garçom. Você só quer ver o que tem lá.</p>
+                
+                <h3 style="color: var(--white); font-size: 1.2rem;">Exemplo do Mundo Real: Ver produtos</h3>
+                <p>Quando você abre a página inicial da Amazon, seu navegador faz um <code>GET</code> nos servidores pedindo a lista das ofertas do dia. O resultado esperado é que O Servidor retorne uma lista enorme contendo os nomes, fotos e preços para você simplesmente olhar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Seção: POST -->
+    <section class="step">
+        <div class="container">
+            <div class="card" style="border-left: 8px solid #00e676;">
+                <h2 class="card-header" style="color: #00e676;">4. O Método POST (Criar)</h2>
+                <p>O <strong>POST</strong> (do inglês "Publicar/Enviar") é o método criador. Ele indica que você quer <strong>ENVIAR</strong> informações novas para que o servidor <strong>CRIE</strong> algo que não existia antes.</p>
+                <p>🍕 <strong>A Analogia do Restaurante:</strong> É o momento em que você chama o garçom e faz o seu pedido ("Quero uma pizza de calabresa"). Uma nova ordem de preparo acaba de nascer na cozinha!</p>
+                
+                <h3 style="color: var(--white); font-size: 1.2rem;">Exemplo do Mundo Real: Criar Cadastro</h3>
+                <p>Quando você preenche seu nome e senha para criar uma nova conta na Netflix, e aperta "Registrar", seu navegador envia um <code>POST</code> confidencial. O resultado esperado é o Servidor responder: "Recebido! Sua conta foi criada no nosso banco de dados com sucesso".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Seção: PUT -->
+    <section class="step">
+        <div class="container">
+            <div class="card" style="border-left: 8px solid #ffca28;">
+                <h2 class="card-header" style="color: #ffca28;">5. O Método PUT (Atualizar)</h2>
+                <p>O <strong>PUT</strong> (do inglês "Colocar") é o método atualizador. Ele indica que algo já existe lá no banco de dados, mas você quer substituí-lo ou <strong>ATUALIZAR</strong> informações velhas.</p>
+                <p>🍕 <strong>A Analogia do Restaurante:</strong> A pizza já está sendo preparada, mas você lembra que é alérgico. Você chama o garçom e pede para "Tirar a cebola do pedido anterior". O cozinheiro altera a comanda e continua.</p>
+                
+                <h3 style="color: var(--white); font-size: 1.2rem;">Exemplo do Mundo Real: Mudar o Endereço</h3>
+                <p>Você se mudou e vai no Mercado Livre alterar o seu CEP de entrega na aba do perfil. Ao apertar salvar, o celular dispara um <code>PUT</code>. O resultado esperado é o Servidor substituir o seu CEP antigo pelo novo e confirmar: "Endereço atualizado".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Seção: DELETE -->
+    <section class="step">
+        <div class="container">
+            <div class="card" style="border-left: 8px solid #ff5252;">
+                <h2 class="card-header" style="color: #ff5252;">6. O Método DELETE (Remover)</h2>
+                <p>Como o nome sugere, o <strong>DELETE</strong> é o método destruidor. Ele possui uma única responsabilidade vital: <strong>REMOVER</strong> um dado específico definitivamente.</p>
+                <p>🍕 <strong>A Analogia do Restaurante:</strong> Você olhou o relógio, viu que demorou demais e avisa o garçom: "Pode cancelar meu pedido, por favor. Vou embora". A comanda é jogada no lixo e o prato cancelado.</p>
+                
+                <h3 style="color: var(--white); font-size: 1.2rem;">Exemplo do Mundo Real: Deletar Conta</h3>
+                <p>Depois de muita dor de cabeça, você clica naquele botão oculto de "Deletar Conta" do Facebook. O aplicativo envia uma mensagem silenciosa com o método <code>DELETE</code>. O resultado esperado é o servidor limpar todas as suas fotos e dados e confirmar: "Sua conta foi escluída para sempre".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Resumo -->
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">7. Resumo Rápido (O Quadrado Mágico)</h2>
+                <p>Lembre-se sempre dos verbos e você nunca errará a sua intenção técnica:</p>
+                <ul>
+                    <li>👁️ <strong>GET</strong> → <u>Buscar</u> dados (Eu só quero ver!)</li>
+                    <li>🌱 <strong>POST</strong> → <u>Criar</u> dados (Estou gerando algo novo e inédito!)</li>
+                    <li>✏️ <strong>PUT</strong> → <u>Atualizar</u> dados (Já existe, mas vou corrigir!)</li>
+                    <li>🗑️ <strong>DELETE</strong> → <u>Remover</u> dados (Apague isso agora!)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Quiz -->
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header" style="text-align: center;">8. Praticando a Lógica: Quiz</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">Leia com atenção o problema do mundo real e clique no Método de API correto que será ativado nos bastidores.</p>
+
+                <div class="quiz-container">
+                    <div class="quiz-progress" id="quiz-status">Pergunta 1 de 4</div>
+                    <div class="quiz-question" id="quiz-question">Carregando pergunta...</div>
+                    
+                    <div class="quiz-options" id="quiz-options-box">
+                        <!-- Botões preenchidos via JS -->
+                    </div>
+                    
+                    <div class="quiz-feedback" id="quiz-feedback">
+                        <!-- Mensagem de acerto/erro -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container" style="padding-bottom: 4rem;">
+            <footer>
+                <a href="../aula-9/index.html" class="btn-nav">← Voltar para Aula 9</a>
+                <a href="../aula-11/index.html" class="btn-nav" id="btn-next-class" style="visibility: visible;">Ir para Aula 11 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script>
+        const quizData = [
+            {
+                question: "1. Você abre o aplicativo do Instagram e o feed carrega todas as fotos mais recentes dos seus amigos. Qual método a API usou para te entregar essas fotos?",
+                options: ["📌 POST", "👁️ GET", "✏️ PUT", "🗑️ DELETE"],
+                answer: 1, // index of correct option
+                explanation: "O método GET apenas BUCSA dados no servidor para mostrar na sua tela. Você não adicionou e nem alterou nenhuma fato, só visualizou o cardápio de conteúdos!"
+            },
+            {
+                question: "2. Você preenche um longo formulário para se inscrever para o Enem. Ao clicar em 'Finalizar Inscrição', um novo registro deve nascer no sistema do Governo. Qual método será disparado?",
+                options: ["📌 POST", "👁️ GET", "✏️ PUT", "🗑️ DELETE"],
+                answer: 0,
+                explanation: "O método POST é utilizado quando enviamos novos dados para o sistema. Você solicitou a CRIAÇÃO inédita de uma ficha de inscrição."
+            },
+            {
+                question: "3. Você está ansioso pela entrega de uma encomenda, mas nota que digitou o número do apartamento errado. Você vai lá e altera o 'Apto 15' para 'Apto 51'. Qual é o método usado?",
+                options: ["📌 POST", "👁️ GET", "✏️ PUT", "🗑️ DELETE"],
+                answer: 2,
+                explanation: "O método PUT serve exatamente para substituição. Como o pedido já existia lá dentro, o aplicativo pediu uma ATUALIZAÇÃO de algo velho por algo novo."
+            },
+            {
+                question: "4. Depois de uma viagem cara no Uber, você entra nas configurações e decide que não quer mais o seu Cartão de Crédito salvo lá dentro e retira o cartão do app. Qual foi o método que acatou a sua ação?",
+                options: ["📌 POST", "👁️ GET", "✏️ PUT", "🗑️ DELETE"],
+                answer: 3,
+                explanation: "O método DELETE fez a limpeza. Ele processou a REMOÇÃO do seu dado confidenciail de pagamento do banco de dados do Uber para sempre."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const uiQuestion = document.getElementById("quiz-question");
+        const uiOptionsBox = document.getElementById("quiz-options-box");
+        const uiFeedback = document.getElementById("quiz-feedback");
+        const uiStatus = document.getElementById("quiz-status");
+
+        function renderQuestion() {
+            if (currentQuestion >= quizData.length) {
+                showConclusion();
+                return;
+            }
+
+            const q = quizData[currentQuestion];
+            uiStatus.innerText = `Pergunta ${currentQuestion + 1} de ${quizData.length}`;
+            uiQuestion.innerText = q.question;
+            
+            uiFeedback.style.display = "none";
+            uiOptionsBox.style.display = "flex";
+            uiOptionsBox.innerHTML = ""; // limpa botões anteriores
+
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement("button");
+                btn.className = "quiz-btn";
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(index);
+                uiOptionsBox.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIndex) {
+            const q = quizData[currentQuestion];
+            const isCorrect = (selectedIndex === q.answer);
+            
+            uiOptionsBox.style.display = "none"; // esconde opções
+            uiFeedback.style.display = "block";
+
+            if (isCorrect) {
+                 score++;
+                 uiFeedback.style.backgroundColor = "rgba(0, 230, 118, 0.15)";
+                 uiFeedback.style.border = "1px solid #00e676";
+                 uiFeedback.innerHTML = `<span style='color:#00e676;'>✅ Correto!</span><br><br><span style='font-size:1.1rem;font-weight:normal;color:#e0e0e0;'>${q.explanation}</span>`;
+            } else {
+                 uiFeedback.style.backgroundColor = "rgba(255, 82, 82, 0.15)";
+                 uiFeedback.style.border = "1px solid #ff5252";
+                 uiFeedback.innerHTML = `<span style='color:#ff5252;'>❌ Incorreto! (A resposta certa era Cópia '${q.options[q.answer]}')</span><br><br><span style='font-size:1.1rem;font-weight:normal;color:#e0e0e0;'>${q.explanation}</span>`;
+            }
+
+            const btnNext = document.createElement("button");
+            btnNext.innerText = "Avançar para a próxima →";
+            btnNext.style.marginTop = "1.5rem";
+            btnNext.style.backgroundColor = "var(--purple)";
+            btnNext.style.border = "none";
+            btnNext.onclick = () => {
+                currentQuestion++;
+                renderQuestion();
+            };
+            uiFeedback.appendChild(btnNext);
+        }
+
+        function showConclusion() {
+            uiStatus.innerText = "Resultado Final";
+            uiQuestion.innerText = `Você acertou ${score} de ${quizData.length} problemas reais!`;
+            uiFeedback.style.display = "none";
+            uiOptionsBox.style.display = "flex";
+            uiOptionsBox.innerHTML = `
+                <div style="text-align:center; margin-top:2rem;">
+                    <p style="font-size:1.2rem; color: #b9b5c1;">Ótimo trabalho compreendendo as lógicas de conexão da internet.</p>
+                </div>
+            `;
+        }
+
+        // Inicia o quiz
+        renderQuestion();
+    </script>
+</body>
+
+</html>
