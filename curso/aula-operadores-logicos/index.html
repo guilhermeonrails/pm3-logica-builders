@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica Avançada: Operadores Lógicos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-btn {
+            background-color: var(--black, #1e1e1e);
+            color: var(--text, #fff);
+            border: 1px solid var(--gray, #333);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .quiz-btn:hover {
+            border-color: var(--purple, #bb86fc);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="step">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: bold; color: var(--purple, #bb86fc); margin-bottom: 1rem;">Lógica Avançada</div>
+            <h1 style="border: none; padding: 0; font-size: 3.5rem;">Operadores Lógicos</h1>
+            <p style="font-size: 1.5rem; max-width: 600px; margin: 0 auto 2rem auto;">Como combinar condições e tomar decisões inteligentes.</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">1. Introdução: O que são Operadores Lógicos?</h2>
+                <p>Nas aulas anteriores, vimos que sistemas tomam decisões baseadas em regras (Se → Então). Mas e quando o sistema precisa pensar de forma mais complexa? Quase nunca uma aprovação depende de <strong>uma única condição isolada.</strong></p>
+                <p>É aí que entram os <strong>Operadores Lógicos.</strong> Eles são pequenas palavras mágicas (e universais na programação) que servem para combinar, conectar ou alterar condições.</p>
+                <p>Assim, o seu sistema sai de "robô simples" e ganha superpoderes avaliando cenários que dependem de dezenas de fatores simultâneos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">2. AND (E)</h2>
+                <p><strong>O AND</strong> (que significa "E") exige aprovação total. <strong>TODAS</strong> as condições amarradas ao AND precisam ser confirmadas (Verdadeiras). Se apenas UMA for falsa, a porta se fecha e a operação inteira cai por água abaixo.</p>
+                <p><strong>Analogia do dia a dia:</strong> Imagine que você quer comprar um celular.</p>
+                <p>A regra para a loja liberar a venda é: "O cliente precisa ter dinheiro <strong>AND</strong> o produto deve estar disponível no estoque".</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">3. OR (OU)</h2>
+                <p><strong>O OR</strong> (que significa "OU") é super flexível. Se você está usando o OR, ele só precisa que <strong>PELO MENOS UMA</strong> condição seja classificada como verdadeira para o processo inteiro ser validado.</p>
+                <p><strong>Analogia do dia a dia:</strong> Na hora de pagar as compras de supermercado, o caixa te informa: "Você pode fazer o pagamento em Dinheiro físico <strong>OR</strong> utilizando Cartão de crédito".</p>
+                <p><strong>Por que?</strong> Para o OR, a presença de pelo menos uma "Verdade" tira o peso das outras. Apenas daria errado caso o cliente aparecesse sem carteira, tornando tudo falso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">4. NOT (NÃO)</h2>
+                <p>Diferente de seus amigos conectores, o operador <strong>NOT</strong> avalia apenas UMA condição e faz aquilo que sabe fazer de melhor: <strong>inverter o valor lógico.</strong></p>
+                <p>Ele transforma Verdadeiro em Falso, e Falso em Verdadeiro.</p>
+                <p><strong>Analogia do dia a dia:</strong> A notificação do App diz que você deve levar o guarda-chuva se estiver chovendo. Logicamente, você NÃO vai levar o guarda-chuva se <strong>NOT [Estiver chovendo].</strong></p>
+                <p><strong>Por que?</strong> Isso é muito utilizado para verificar ausências em sistemas. Por exemplo: "liberar cadastro se <strong>NOT</strong> erro".</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card">
+                <h2 class="card-header">5. Resumo de Ouro</h2>
+                <ul>
+                    <li style="margin-bottom: 0.5rem;"><strong>AND: O Exigente.</strong> Precisa que <strong>TUDO</strong> seja Verdadeiro (True) para aprovar.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>OR: O Flexível.</strong> Fica satisfeito se <strong>Pelo menos UM</strong> for Verdadeiro (True).</li>
+                    <li><strong>NOT: O do Contra.</strong> Converte toda Verdade em Falsidade e toda Falsidade em Verdade.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="step">
+        <div class="container">
+            <div class="card app-simulator">
+                <h2 class="card-header">6. Quiz: Treinando as Conexões Lógicas</h2>
+                
+                <div id="quiz-container">
+                    <p style="color: var(--text-gray, #aaa); font-size: 0.9rem; margin-bottom: 1rem;">Pergunta <span id="quiz-counter">1</span> de 5</p>
+                    <div id="quiz-value" style="font-size: 1.2rem; margin-bottom: 1.5rem; line-height: 1.5;"></div>
+                    
+                    <div id="quiz-options-container" style="display: flex; flex-direction: column; align-items: center;"></div>
+                    
+                    <div id="quiz-feedback" style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px;"></div>
+                </div>
+
+                <div id="quiz-end" style="display: none; text-align: center;">
+                    <h3 style="font-size: 1.5rem; color: var(--purple, #bb86fc); margin-bottom: 1rem;">Quiz Concluído!</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Você acertou <strong id="quiz-score" style="color: #00e676;">0</strong> de 5 perguntas.</p>
+                    <button id="btn-restart-quiz" style="padding: 1rem 2rem; font-size: 1.1rem; background-color: var(--purple, #bb86fc); color: #000; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Tentar Novamente</button>
+                </div>
+
+            </div>
+            
+            <footer style="margin-top: 3rem; display: flex; justify-content: space-between;">
+                <a href="../aula-6/index.html" class="btn-nav" style="text-decoration: none;">← Voltar para Aula 6</a>
+                <a href="../aula-7/index.html" class="btn-nav" style="text-decoration: none;">Ir para Aula 7 →</a>
+            </footer>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
